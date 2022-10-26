@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Editar Album</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="" enctype="multipart/form-data" class="form-control">
+        Codigo de album:
+        <input type="text" name="txtCodAlbum" id="txtCodAlbum " class="form-control"><br>
+        Nombre:
+        <input type="text" name="txtNombre" id="txtNombre" class="form-control"><br>
+        Interprete:
+        <select name="ID-Interprete" id="ID-Interprete" class="form-control">
+            {% for inter in interpretes %}
+            <option value="{{inter[0]}}">{{inter[1]}} {{inter[2]}}</option>
+            {% endfor %}
+        </select><br>
+        Genero:
+        <select name="ID-Genero" id="ID-Genero" class="form-control">
+            {% for gen in generos %}
+            <option value="{{gen[0]}}">{{gen[1]}}</option>
+            {% endfor %}
+        </select><br>
+        Discografica:
+        <select name="ID-Discografica" id="ID-Discografica" class="form-control">
+            {% for dicografica in discograficas %}
+            <option value="{{dicografica[0]}}">{{dicografica[1]}}</option>
+            {% endfor %}
+        </select><br>
+        Precio:
+        <input type="text" name="txtPrecio" id="txtPrecio " class="form-control"><br>
+        Cantidad:
+        <input type="text" name="txtCantidad" id="txtCantidad " class="form-control"><br>
+        Formato:
+        <select name="ID-Formato" id="ID-Formato" class="form-control">
+            {% for formato in formatos %}
+            <option value="{{formato[0]}}">{{formato[1]}}</option>
+            {% endfor %}
+        </select><br>
+    </form>
+    </div>
